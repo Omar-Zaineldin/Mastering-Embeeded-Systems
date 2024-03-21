@@ -1,0 +1,1 @@
+this Dirctory contains all the assignments solutions for C Programming lectures 
