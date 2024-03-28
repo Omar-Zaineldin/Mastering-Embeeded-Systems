@@ -1,15 +1,15 @@
 #include<stdio.h>
 #define RowSize 2
 #define ColumSize 2
-void StoreMatrixElements(int [][ColumSize]);
-void PrintMatrixElements(int [][ColumSize]);
-void SumColumSizeMatrix(int [][ColumSize],int [][ColumSize]);
+void StoreMatrixElements(float [][ColumSize]);
+void PrintMatrixElements(float [][ColumSize]);
+void SumColumSizeMatrix(float [][ColumSize],float [][ColumSize]);
 
 void main(void)
 {
 	/* EX1: Sum of two matrix of order ColumSize*ColumSize */
 	
-	int matrix_a[RowSize][ColumSize],matrix_b[RowSize][ColumSize];
+	float matrix_a[RowSize][ColumSize],matrix_b[RowSize][ColumSize];
 	
 	printf("Plz Enter the elements of 1st matrix\n");
 	StoreMatrixElements(matrix_a);
@@ -27,7 +27,7 @@ void main(void)
 	
 }
 
-void StoreMatrixElements(int a[RowSize][ColumSize])
+void StoreMatrixElements(float a[RowSize][ColumSize])
 {
 	/* this outer loop for rows*/
 	for(char r=0;r<RowSize;r++)
@@ -37,12 +37,12 @@ void StoreMatrixElements(int a[RowSize][ColumSize])
 		{
 			printf("Plz Enter a%d%d: ",r+1,c+1);
 			fflush(stdout); fflush(stdin);
-			scanf("%d",&(a[r][c]));
+			scanf("%f",&(a[r][c]));
 		}
 	}
 }
 
-void PrintMatrixElements(int a[RowSize][ColumSize])
+void PrintMatrixElements(float a[RowSize][ColumSize])
 {
 	/* this outer loop for rows*/
 	for(char r=0;r<RowSize;r++)
@@ -51,13 +51,13 @@ void PrintMatrixElements(int a[RowSize][ColumSize])
 		for(char c=0;c<ColumSize;c++)
 		{
 			
-			printf(" %d\t",a[r][c]);
+			printf(" %.2f\t",a[r][c]);
 		}
 		printf("\n");
 	}	
 }
 
-void SumColumSizeMatrix(int a[][ColumSize],int b[][ColumSize])
+void SumColumSizeMatrix(float a[][ColumSize],float b[][ColumSize])
 {
 	/* this outer loop for rows*/
 	for(char r=0;r<RowSize;r++)

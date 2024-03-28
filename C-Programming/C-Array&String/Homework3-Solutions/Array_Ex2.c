@@ -5,8 +5,8 @@ void main(void)
 {
 	/*This Program Calc Average of Array*/
 	
-	char ArraySize,i=0;
-	char* array;
+	int ArraySize,i=0;
+	float* array;
 	float ArraySum=0;
 	
 	printf("Plz Enter Size Of Array: ");
@@ -14,7 +14,7 @@ void main(void)
 	scanf("%d",&ArraySize);
 	
 	/* This Called a Dynamic Array -Dynamic Memory Allocation- it's return address of 1st reserved byte */
-	array=malloc(ArraySize * sizeof(char));
+	array=malloc(ArraySize * sizeof(float));
 	
 	/*This Condition Because Sometimes there is no Size Avilable in Memory */
 	if(array!=NULL)
@@ -23,7 +23,8 @@ void main(void)
 		for(i=0;i<ArraySize;i++)
 		{
 			printf("Enter Value Of Element %d: ",i+1);
-			scanf("%d",&array[i]);
+			fflush(stdin); fflush(stdout);
+			scanf("%f",&array[i]);
 		}
 		
 		/*This Loop To calc the avg*/
@@ -35,7 +36,8 @@ void main(void)
 		/*This To destroy the array destroy means -no access to these locations-*/
 		free(array);
 		
-		printf("The Average = %f\n",(ArraySum/ArraySize));
+		fflush(stdin); fflush(stdout);
+		printf("The Average = %.2f\n",(ArraySum/ArraySize));
 	}
 	
 	else 
